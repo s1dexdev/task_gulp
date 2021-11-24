@@ -1,0 +1,10 @@
+{
+    "files": [
+        "./src/ts/restaurant.ts",
+        "./src/ts/bank.ts"
+    ],
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "target": "es6"
+    }
+}
