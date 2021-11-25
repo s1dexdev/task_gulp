@@ -1,7 +1,8 @@
 {
     "files": [
         "./src/ts/restaurant.ts",
-        "./src/ts/bank.ts"
+        "./src/ts/bank.ts",
+
     ],
     "compilerOptions": {
         "noImplicitAny": true,

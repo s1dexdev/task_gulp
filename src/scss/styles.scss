@@ -1,0 +1,181 @@
+/* Base */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(230, 253, 255);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    padding-left: 20px;
+
+    & button {
+        padding: 5px 10px;
+
+        background-color: burlywood;
+
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    & button:hover {
+        background-color: rgb(238, 208, 169);
+    }
+}
+
+/* Restaurant */
+
+.departments {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: -10px;
+
+    &-item {
+        width: 300px;
+        margin: 15px;
+        padding: 10px;
+
+        background-color: rgb(255, 212, 133);
+
+        border: 1px solid black;
+        border-radius: 5px;
+
+        transition: box-shadow 100ms ease-in, transform 100ms ease-in;
+    }
+
+    &-item:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        box-shadow: 10px 10px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+}
+
+.text-title {
+    font-weight: 600;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    padding: 5px 10px;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+/* Bank */
+
+.bank-wrapper {
+    padding: 10px;
+}
+
+.add-client-btn {
+    margin-bottom: 20px;
+}
+
+.clients-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+
+    & button {
+        display: inline-block;
+    }
+}
+
+.client-item {
+    width: auto;
+    margin: 15px;
+    padding: 10px;
+
+    background-color: rgba(255, 228, 177, 0.589);
+    border: 1px solid black;
+    border-radius: 5px;
+
+    transition: box-shadow 100ms ease-in, transform 100ms ease-in;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        box-shadow: 10px 10px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+}
+
+.client-accounts {
+    display: flex;
+    margin: -15px;
+}
+
+.client-account {
+    width: 200px;
+    margin: 15px;
+    padding: 5px;
+
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+/* Modal */
+
+.modal.open .modal-overlay,
+.modal.open .modal-window {
+    opacity: 1;
+    z-index: 1000;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-window {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 5px;
+    background-color: #ffff;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+
+    cursor: pointer;
+}
