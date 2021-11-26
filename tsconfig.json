@@ -1,8 +1,7 @@
 {
     "files": [
-        "src/ts/main.ts",
-        "src/ts/Restaurant.ts",
-        "src/ts/Bank.ts"
+        "src/ts/restaurant.ts",
+        "src/ts/bank.ts"
 
     ],
     "compilerOptions": {
