@@ -1,11 +1,12 @@
 {
     "files": [
-        "./src/ts/restaurant.ts",
-        "./src/ts/bank.ts",
+        "src/ts/main.ts",
+        "src/ts/Restaurant.ts",
+        "src/ts/Bank.ts"
 
     ],
     "compilerOptions": {
         "noImplicitAny": true,
-        "target": "es6"
+        "target": "ES6"
     }
 }

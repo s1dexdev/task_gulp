@@ -1,3 +1,19 @@
+interface IModal {
+    open(): void;
+    close(): void;
+    deleteMarkup(): void;
+}
+
+interface Input {
+    [kye: string]: string;
+}
+
+interface IForm {
+    id?: string;
+    formName: string;
+    inputs: Input[];
+}
+
 interface IAccount {
     id: string;
     typeAcc: string;
@@ -569,126 +585,3 @@ class Bank implements IBank {
         }
     }
 }
-
-const bankClients: any = [
-    {
-        name: 'James',
-        surname: 'Jameson',
-        id: '01',
-        isActive: true,
-        registrationDate: new Date().toLocaleDateString(),
-        accounts: [
-            {
-                id: '100',
-                typeAcc: 'debit',
-                currency: 'USD',
-                balance: 5000,
-                expiryDate: '11/11/2024',
-                isActive: true,
-            },
-            {
-                id: '101',
-                typeAcc: 'credit',
-                currency: 'USD',
-                creditLimit: 10000,
-                balance: {
-                    own: 0,
-                    credit: 10000,
-                },
-                expiryDate: '11/11/2024',
-                isActive: true,
-            },
-        ],
-    },
-    {
-        name: 'Robert',
-        surname: 'Robertson',
-        id: '02',
-        isActive: true,
-        registrationDate: new Date().toLocaleDateString(),
-        accounts: [
-            {
-                id: '200',
-                typeAcc: 'debit',
-                currency: 'USD',
-                balance: 3000,
-                expiryDate: '11/11/2024',
-                isActive: true,
-            },
-            {
-                id: '201',
-                typeAcc: 'credit',
-                currency: 'USD',
-                creditLimit: 5000,
-                balance: {
-                    own: 0,
-                    credit: 3000,
-                },
-                expiryDate: '11/11/2024',
-                isActive: true,
-            },
-        ],
-    },
-    {
-        name: 'John',
-        surname: 'Johnson',
-        id: '03',
-        isActive: true,
-        registrationDate: new Date().toLocaleDateString(),
-        accounts: [
-            {
-                id: '300',
-                typeAcc: 'debit',
-                currency: 'USD',
-                balance: 7000,
-                expiryDate: '11/11/2024',
-                isActive: true,
-            },
-            {
-                id: '301',
-                typeAcc: 'credit',
-                currency: 'USD',
-                creditLimit: 15000,
-                balance: {
-                    own: 0,
-                    credit: 15000,
-                },
-                expiryDate: '11/11/2024',
-                isActive: true,
-            },
-        ],
-    },
-    {
-        name: 'Linda',
-        surname: 'Tevit',
-        id: '04',
-        isActive: true,
-        registrationDate: new Date().toLocaleDateString(),
-        accounts: [
-            {
-                id: '300',
-                typeAcc: 'debit',
-                currency: 'UAH',
-                balance: 10000,
-                expiryDate: '11/11/2024',
-                isActive: true,
-            },
-            {
-                id: '301',
-                typeAcc: 'credit',
-                currency: 'UAH',
-                creditLimit: 50000,
-                balance: {
-                    own: 0,
-                    credit: 30000,
-                },
-                expiryDate: '11/11/2024',
-                isActive: true,
-            },
-        ],
-    },
-];
-
-document.addEventListener('DOMContentLoaded', event => {
-    new Bank('.app', bankClients);
-});

@@ -1,13 +1,12 @@
-'use strict';
-
-const { watch, series, parallel, src, dest } = require('gulp');
+const { src, dest, watch, series, parallel } = require('gulp');
 
 const browsersync = require('browser-sync').create();
 const ts = require('gulp-typescript');
 const tsProject = ts.createProject('./tsconfig.json');
 
 const scss = require('gulp-sass')(require('sass'));
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es').default;
+const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const del = require('del');
 
@@ -38,7 +37,7 @@ function browserSync() {
             baseDir: './build/',
         },
         port: 3000,
-        notify: false,
+        notify: true,
         open: false,
     });
 }
@@ -51,6 +50,7 @@ function html() {
 
 function styles() {
     return src(path.src.scss)
+        .pipe(concat('styles.css'))
         .pipe(
             scss({
                 outputStyle: 'compressed',
@@ -64,7 +64,8 @@ function styles() {
 function typescript() {
     return src(path.src.ts)
         .pipe(tsProject())
-        .js.pipe(uglify())
+        .js.pipe(concat('scripts.js'))
+        .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest(path.build.js))
         .pipe(browsersync.stream());
@@ -82,8 +83,5 @@ function clean() {
 
 build = series(clean, html, styles, typescript);
 observe = parallel(build, watchFiles, browserSync);
-
-exports.build = build;
-exports.observe = observe;
 
 exports.default = observe;

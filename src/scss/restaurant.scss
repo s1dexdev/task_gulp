@@ -1,0 +1,45 @@
+.departments {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+
+    &-item {
+        width: 300px;
+        margin: 15px;
+        padding: 10px;
+
+        background-color: rgb(255, 212, 133);
+
+        border: 1px solid black;
+        border-radius: 5px;
+
+        transition: box-shadow 100ms ease-in, transform 100ms ease-in;
+    }
+
+    &-item:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        box-shadow: 10px 10px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+}
+
+.text-title {
+    font-weight: 600;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    padding: 5px 10px;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+.buttons {
+    margin-top: 30px;
+}

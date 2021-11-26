@@ -1,0 +1,49 @@
+.bank-wrapper {
+    padding: 10px;
+}
+
+.add-client-btn {
+    margin-bottom: 20px;
+}
+
+.clients-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+
+    & button {
+        display: inline-block;
+    }
+}
+
+.client-item {
+    width: auto;
+    margin: 15px;
+    padding: 10px;
+
+    background-color: rgba(255, 228, 177, 0.589);
+    border: 1px solid black;
+    border-radius: 5px;
+
+    transition: box-shadow 100ms ease-in, transform 100ms ease-in;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        box-shadow: 10px 10px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+}
+
+.client-accounts {
+    display: flex;
+    margin: -15px;
+}
+
+.client-account {
+    width: 200px;
+    margin: 15px;
+    padding: 5px;
+
+    border: 1px solid black;
+    border-radius: 5px;
+}
