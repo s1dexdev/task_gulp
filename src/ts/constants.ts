@@ -25,5 +25,6 @@ const file = {
 };
 
 const outputStyle = 'compressed';
+const port = 3000;
 
-module.exports = { path, file, outputStyle };
+module.exports = { path, file, outputStyle, port };
