@@ -1,11 +1,7 @@
 {
-    "files": [
-        "src/ts/restaurant.ts",
-        "src/ts/bank.ts"
-
-    ],
     "compilerOptions": {
         "noImplicitAny": true,
-        "target": "ES6"
+        "target": "ES6",
+        "rootDir": "./src/ts"
     }
 }
